@@ -1,0 +1,100 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Signup service",
+    "version": "0.0.1",
+    "contact": {
+      "name": "Oswee project",
+      "url": "https://github.com/oswee/oswee",
+      "email": "dzintars.klavins@gmail.com"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/signup": {
+      "post": {
+        "summary": "Create new todo task",
+        "operationId": "Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSignupResponse"
+            }
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSignupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SignupCmdService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "v1CreateSignupPayload": {
+      "type": "object",
+      "properties": {
+        "display_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateSignupRequest": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string",
+          "title": "API versioning: it is my best practice to specify version explicitly"
+        },
+        "payload": {
+          "$ref": "#/definitions/v1CreateSignupPayload"
+        }
+      },
+      "title": "Request data to create new todo task"
+    },
+    "v1CreateSignupResponse": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string",
+          "title": "API versioning: it is my best practice to specify version explicitly"
+        },
+        "uuid": {
+          "type": "string",
+          "format": "byte",
+          "title": "UUID of created signup"
+        }
+      },
+      "title": "Contains data of created todo task"
+    }
+  }
+}
