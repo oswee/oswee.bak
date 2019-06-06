@@ -48,7 +48,7 @@ func (s *signupCmdServiceServer) connect(ctx context.Context) (*sql.Conn, error)
 	return c, nil
 }
 
-// Create new todo task
+// Create new Signup
 func (s *signupCmdServiceServer) Create(ctx context.Context, req *v1.CreateSignupRequest) (*v1.CreateSignupResponse, error) {
 	// check if the API version requested by client is supported by server
 	if err := s.checkAPI(req.Api); err != nil {
@@ -65,14 +65,14 @@ func (s *signupCmdServiceServer) Create(ctx context.Context, req *v1.CreateSignu
 	u, _ := uuid.NewV4()
 	uuid := u.String()
 
-	// insert ToDo entity data
+	// insert Signup entity data
 	res, err := c.ExecContext(ctx, "INSERT INTO signup(`uuid`, `email`, `display_name`, `password`, `create_time`) VALUES(?, ?, ?, ?, ?)",
 		uuid, req.Payload.Email, req.Payload.DisplayName, req.Payload.Password, time.Now())
 	if err != nil {
 		return nil, status.Error(codes.Unknown, "failed to insert into Signups-> "+err.Error())
 	}
 
-	// get ID of creates ToDo
+	// get ID of created Signup
 	_, err1 := res.LastInsertId()
 	if err1 != nil {
 		return nil, status.Error(codes.Unknown, "failed to retrieve id for created Signup request-> "+err.Error())

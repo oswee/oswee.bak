@@ -51,6 +51,13 @@ func init() {
 // counter.
 func AddRequestID(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// TODO: !!!! CORS should be moved to dedicated middleware! Dirty testing only!
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PATCH, PUT, DELETE")
+		if (*r).Method == "OPTIONS" {
+			w.WriteHeader(http.StatusOK)
+		}
+		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, origin, x-requested-with, Cache-Control, X-App-Token, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 		myid := atomic.AddUint64(&reqID, 1)
 		ctx := r.Context()
 		ctx = context.WithValue(ctx, RequestIDKey, fmt.Sprintf("%s-%06d", prefix, myid))
