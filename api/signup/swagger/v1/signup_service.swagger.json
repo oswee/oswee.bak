@@ -1,23 +1,17 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Signup service",
+    "title": "Oswee Signup API",
     "version": "0.0.1",
     "contact": {
-      "name": "Oswee project",
-      "url": "https://github.com/oswee/oswee",
+      "name": "Oswee Signup API team",
+      "url": "https://help.oswee.com/api/signup",
       "email": "dzintars.klavins@gmail.com"
     }
   },
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
   "paths": {
     "/v1/signup": {
       "post": {
@@ -47,9 +41,7 @@
             }
           }
         ],
-        "tags": [
-          "SignupCmdService"
-        ]
+        "tags": ["SignupCmdService"]
       }
     }
   },

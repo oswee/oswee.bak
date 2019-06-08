@@ -1,0 +1,64 @@
+
+syntax = "proto3";
+package v1;
+
+// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Oswee Authentication API";
+		version: "0.0.1";
+		contact: {
+			name: "Oswee";
+			url: "https://github.com/oswee/oswee";
+			email: "dzintars.klavins@gmail.com";
+        };
+    };
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+message GetEmailPayload {
+    string email = 1;
+}
+// Request data to create new todo task
+message GetEmailRequest{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    GetEmailPayload payload = 2;
+}
+
+// Contains data of created todo task
+message GetEmailResponse{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    // UUID of created signup
+    bytes uuid = 2;
+}
+
+
+// Service to manage list of todo tasks
+service SignupQryService {
+    // Create new todo task
+    rpc GetEmail(GetEmailRequest) returns (GetEmailResponse){
+        option (google.api.http) = {
+            get: "/v1/auth/{email}"
+        };
+    }
+}
