@@ -6,11 +6,15 @@ export default css`
 	}
 	:host {
 		flex: 1;
-		display: grid;
-		place-items: center center;
-		transition: all 5s linear;
-		background-color: var(--color-dodgerblue-10l);
-		overflow: auto;
+		display: flex;
+		flex-direction: row;
 	}
-	
+	#shortcuts {
+		width: 3rem;
+		background-color: orange;
+	}
+	#workspace {
+		flex: 1;
+		border: 10px solid green;
+	}
 `;

@@ -11,9 +11,9 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
-	v1 "github.com/dzintars/project-layout/pkg/api/v1"
-	"github.com/dzintars/project-layout/pkg/logger"
-	"github.com/dzintars/project-layout/pkg/protocol/rest/middleware"
+	v1 "github.com/oswee/oswee/pkg/api/v1"
+	"github.com/oswee/oswee/pkg/logger"
+	"github.com/oswee/oswee/pkg/protocol/rest/middleware"
 )
 
 // RunAuthServer runs HTTP/REST gateway

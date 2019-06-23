@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/dzintars/project-layout/pkg/service/smartws"
 	"github.com/gorilla/websocket"
+	"github.com/oswee/oswee/pkg/service/smartws"
 )
 
 func SmartSetup() error {

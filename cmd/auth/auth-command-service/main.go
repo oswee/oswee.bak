@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/dzintars/project-layout/pkg/cmd/auth-service/command"
+	"github.com/oswee/oswee/pkg/cmd/auth-service/command"
 )
 
 func main() {

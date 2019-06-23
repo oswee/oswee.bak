@@ -8,9 +8,9 @@ import (
 
 	"google.golang.org/grpc"
 
-	v1 "github.com/dzintars/project-layout/pkg/api/v1"
-	"github.com/dzintars/project-layout/pkg/logger"
-	"github.com/dzintars/project-layout/pkg/protocol/grpc/middleware"
+	v1 "github.com/oswee/oswee/pkg/api/v1"
+	"github.com/oswee/oswee/pkg/logger"
+	"github.com/oswee/oswee/pkg/protocol/grpc/middleware"
 )
 
 // RunAuthServer runs gRPC service to publish ToDo service

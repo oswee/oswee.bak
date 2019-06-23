@@ -11,7 +11,7 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 		version: "0.0.1";
 		contact: {
 			name: "My project";
-			url: "https://github.com/dzintars/project-layout";
+			url: "https://github.com/oswee/oswee";
 			email: "dzintars.klavins@gmail.com";
         };
     };

@@ -3,8 +3,8 @@ package sessions
 import (
 	"net/http"
 
-	"github.com/dzintars/project-layout/pkg/logger"
 	"github.com/gorilla/sessions"
+	"github.com/oswee/oswee/pkg/logger"
 	"go.uber.org/zap"
 )
 

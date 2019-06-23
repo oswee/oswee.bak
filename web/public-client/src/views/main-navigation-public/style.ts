@@ -24,7 +24,7 @@ export default css`
 		margin: 0 1rem;
 		color: var(--color-dodgerblue-10l);
 		cursor: pointer;
-		font-weight: 500;
+		font-weight: 700;
 		font-size: 1.8rem;
 	}
 

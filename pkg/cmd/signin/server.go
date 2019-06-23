@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/dzintars/project-layout/pkg/service/signin"
 	"github.com/gorilla/mux"
+	"github.com/oswee/oswee/pkg/service/signin"
 )
 
 // NewRouter ...

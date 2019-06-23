@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/dzintars/project-layout/pkg/cmd/smartws"
+	"github.com/oswee/oswee/pkg/cmd/smartws"
 )
 
 func main() {

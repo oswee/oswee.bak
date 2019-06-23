@@ -10,6 +10,7 @@ import './routes/app-marketplace';
 import './routes/app-services';
 import './routes/app-shipping';
 import './routes/app-not-found';
+import './routes/app-apps';
 import './routes/app-route-planner';
 
 window.addEventListener('load', () => {
@@ -26,6 +27,7 @@ function initRouter() {
             children: [
                 { path: '/', component: 'app-home' },
                 { path: '/marketplace', component: 'app-marketplace' },
+                { path: '/apps', component: 'app-apps' },
                 { path: '/apps/routeplanner', component: 'app-route-planner' },
                 { path: '/services', component: 'app-services' },
                 {

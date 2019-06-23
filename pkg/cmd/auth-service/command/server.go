@@ -5,10 +5,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/dzintars/project-layout/pkg/logger"
-	grpc "github.com/dzintars/project-layout/pkg/protocol/grpc"
-	rest "github.com/dzintars/project-layout/pkg/protocol/rest"
-	v1 "github.com/dzintars/project-layout/pkg/service/auth/v1"
+	"github.com/oswee/oswee/pkg/logger"
+	grpc "github.com/oswee/oswee/pkg/protocol/grpc"
+	rest "github.com/oswee/oswee/pkg/protocol/rest"
+	v1 "github.com/oswee/oswee/pkg/service/auth/v1"
 )
 
 // Config is configuration for Server

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/dzintars/project-layout/pkg/sessions"
+	"github.com/oswee/oswee/pkg/sessions"
 )
 
 // SignIn ...

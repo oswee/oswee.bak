@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dzintars/project-layout/pkg/cmd/signin"
+	"github.com/oswee/oswee/pkg/cmd/signin"
 )
 
 func main() {
