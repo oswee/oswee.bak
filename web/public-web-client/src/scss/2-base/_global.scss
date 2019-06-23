@@ -1,0 +1,36 @@
+* {
+	font-family: Montserrat, sans-serif;
+	text-rendering: geometricPrecision;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+	margin: 0;
+	padding: 0;
+}
+
+svg path {
+	fill: inherit;
+}
+
+body {
+	position: relative;
+	display: grid;
+	//    grid-template-columns: 1fr;
+	//    grid-template-rows: 1fr;
+	place-items: center center;
+}

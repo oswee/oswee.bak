@@ -1,0 +1,82 @@
+{
+  "name": "lit-redux-advanced-boilerplate",
+  "version": "1.0.0",
+  "description": "Advanced boilerplate and sample app with Lit Element, Redux, Redux-Saga, Reselect, SCSS.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' > tslint.log",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "lint:prettier": "prettier \"**/*.js\" --list-different || (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
+    "lint:types": "tsc",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "format:eslint": "eslint --ext .js,.html . --fix",
+    "format:prettier": "prettier \"**/*.js\" --write"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oswee/lit-redux-advanced-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Dzintars Klavins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oswee/lit-redux-advanced-boilerplate/issues"
+  },
+  "homepage": "https://github.com/oswee/lit-redux-advanced-boilerplate#readme",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "lit-element": "^2.1.0",
+    "lit-html": "^1.0.0",
+    "lit-html-element": "^0.9.1",
+    "pwa-helpers": "^0.9.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.2",
+    "reselect": "^4.0.0"
+  },
+  "devDependencies": {
+    "@open-wc/eslint-config": "^0.4.5",
+    "@open-wc/prettier-config": "^0.1.10",
+    "@types/node": "^12.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "@vaadin/router": "^1.2.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.18.0",
+    "clean-webpack-plugin": "^2.0.2",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-lit": "^1.0.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "lint-staged": "^8.1.7",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "prettier": "^1.17.1",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-pwa-manifest": "^4.0.0",
+    "workbox-webpack-plugin": "^4.3.1"
+  }
+}
