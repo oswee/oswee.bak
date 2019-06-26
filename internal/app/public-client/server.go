@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/oswee/oswee/internal/app/public-client/middleware"
 	"github.com/oswee/oswee/pkg/logger"
 )
 
@@ -50,7 +51,8 @@ func RunServer() error {
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  120 * time.Second,
 		//TLSConfig: tlsConfig,
-		Handler: router,
+		Handler: middleware.AddRequestID(
+			middleware.AddLogger(logger.Log, router)),
 	}
 	log.Fatal(srv.ListenAndServe())
 	// err := srv.ListenAndServe()
