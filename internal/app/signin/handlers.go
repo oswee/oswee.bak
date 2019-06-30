@@ -93,6 +93,7 @@ func SignOut(w http.ResponseWriter, r *http.Request) {
 
 func setHeaders(w *http.ResponseWriter, r *http.Request) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+	// (*w).Header().Set("Access-Control-Allow-Origin", "https://oswee.com")
 	(*w).Header().Set("Access-Control-Allow-Credentials", "true")
 	(*w).Header().Set("Content-Type", "application/json; charset=utf-8")
 	// (*w).Header().Set("Content-Encoding", "gzip")

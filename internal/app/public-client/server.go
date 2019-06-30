@@ -51,8 +51,7 @@ func RunServer() error {
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  120 * time.Second,
 		//TLSConfig: tlsConfig,
-		Handler: middleware.AddRequestID(
-			middleware.AddLogger(logger.Log, router)),
+		Handler: middleware.AddRequestID(middleware.AddLogger(logger.Log, router)),
 	}
 	log.Fatal(srv.ListenAndServe())
 	// err := srv.ListenAndServe()

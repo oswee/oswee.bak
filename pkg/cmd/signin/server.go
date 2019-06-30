@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/oswee/oswee/pkg/service/signin"
+	"github.com/oswee/oswee/internal/app/signin"
 )
 
 // NewRouter ...
