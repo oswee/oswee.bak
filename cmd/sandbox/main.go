@@ -1,23 +1,52 @@
 package main
 
-import (
-	"net/http"
+import "fmt"
 
-	"github.com/oswee/oswee/pkg/session"
-)
-
-func Add(val1, val2 int) int {
-	return val1 + val2
+type triangle struct {
+	x float64
+	y float64
 }
 
-func Substact(val1, val2 int) int {
-	return val1 - val2
+type square struct {
+	x float64
 }
 
-func RootEndpoint(res http.ResponseWriter, req *http.Request) {
-	//
+type rectangle struct {
+	x float64
+	y float64
+}
+
+func (t triangle) Area() float64 {
+	return (t.x * t.y) / 2
+}
+
+func (s square) Area() float64 {
+	return s.x * s.x
+}
+
+func (r rectangle) Area() float64 {
+	return r.x * r.y
+}
+
+type Shape interface {
+	Area() float64
+}
+
+func Print(s Shape) {
+	fmt.Println(s)
 }
 
 func main() {
-	session.Set("Dzintars")
+	// var s Shape
+	s := &square{
+		2,
+	}
+	t := &triangle{
+		4,
+		3,
+	}
+
+	fmt.Println(s.Area())
+	fmt.Println(t.Area())
+	print(s)
 }
