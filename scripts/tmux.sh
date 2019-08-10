@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Author: Dzintars Klavins
+`# Author: Dzintars Klavins
 # This script will create a new tmux session (or attach existing)
 # for developing current project.
-# https://daniel-siepmann.de/Posts/2016-05-15-tmux.html
+# https://daniel-siepmann.de/Posts/2016-05-15-tmux.html`
 
 SESSION="dev"
 PROJECT_PATH="/home/dzintars/Go/src/github.com/oswee/srp"

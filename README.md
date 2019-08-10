@@ -4,7 +4,7 @@ This is a students distributed microservices project.
 
 This project contains a stack of:
 
-## Backend
+## Back-end
 
 - Go
 - gRPC
@@ -14,7 +14,7 @@ This project contains a stack of:
 - MariaDB
 - Redis
 
-## Frontend
+## Front-end
 
 - TypeScript
 - Web Components
