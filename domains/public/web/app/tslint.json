@@ -1,0 +1,26 @@
+{
+	"defaultSeverity": "error",
+	"extends": ["tslint:recommended"],
+	"jsRules": {
+		"quotemark": [false],
+		"trailing-comma": false
+	},
+	"rules": {
+		"curly": false,
+		"interface-name": false,
+		"jsdoc-format": false,
+		"member-ordering": false,
+		"no-console": false,
+		"no-string-literal": false,
+		"no-var-requires": false,
+		"object-literal-key-quotes": false,
+		"object-literal-sort-keys": false,
+		"only-arrow-functions": false,
+		"ordered-imports": false,
+		"quotemark": [true, "double"],
+		"trailing-comma": false,
+		"variable-name": false,
+		"experimentalDecorators": true
+	},
+	"rulesDirectory": []
+}

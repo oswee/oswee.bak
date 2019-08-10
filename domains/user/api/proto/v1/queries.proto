@@ -1,0 +1,80 @@
+syntax = "proto3";
+package v1;
+
+// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+// import "google/protobuf/empty.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+// import "google/protobuf/empty.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+        title: "User Query service";
+        description: "User Query API service";
+		version: "0.0.1";
+		contact: {
+			name: "Oswee Users";
+			url: "https://github.com/oswee/oswee";
+			email: "dzintars.klavins@gmail.com";
+        };
+    };
+    host: "api.oswee.com";
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+// UserService is a command service to handle new user signups
+service UserService {
+    // SignUp ...
+    rpc SignUp(SignUpReq) returns (SignUpRes){
+        option (google.api.http) = {
+            post: "/v1/signup"
+            body: "*"
+        };
+    }
+}
+
+message SignupPayload {
+    string display_name = 1;
+    string email = 2;
+    string password = 3;
+}
+
+// SignupRequest ...
+message SignUpReq{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+    SignupPayload payload = 2;
+}
+
+// SignupResponse returns response of received command
+message SignUpRes{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    // UUID of created signup request
+    bytes uuid = 2;
+}
+
+message Credentials {
+    string email = 1;
+    string password = 2;
+}
+
+// SignInRequest ...
+message SignInReq{
+    string api = 1;
+    Credentials credentials = 2;
+}
