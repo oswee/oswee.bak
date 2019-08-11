@@ -12,4 +12,4 @@ require (
 	go.uber.org/zap v1.10.0
 )
 
-replace github.com/oswee/oswee => ./pkg/logger
+replace github.com/oswee/oswee => ../../pkg/logger
