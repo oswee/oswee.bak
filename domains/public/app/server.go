@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/oswee/oswee/domains/public/app/middleware"
-	"github.com/oswee/oswee/domains/public/pkg/logger"
+	"github.com/oswee/oswee/pkg/logger"
 )
 
 // Config is configuration for Server
