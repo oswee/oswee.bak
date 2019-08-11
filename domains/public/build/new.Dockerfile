@@ -14,6 +14,7 @@ WORKDIR $GOPATH/src/github.com/oswee/oswee/
 COPY . .
 # Fetch dependencies.
 # Using go mod with go 1.11
+ENV GO111MODULE=on
 RUN go mod download
 RUN go mod verify
 # Build the binary
