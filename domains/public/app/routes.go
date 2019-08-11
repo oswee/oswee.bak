@@ -1,4 +1,4 @@
-package client
+package app
 
 import (
 	"net/http"
@@ -14,7 +14,7 @@ func newRouter() *mux.Router {
 	router.HandleFunc("/", indexGetHandler)
 	router.HandleFunc("/favicon.ico", faviconGetHandler).Methods("GET")
 
-	fs := gzipped.FileServer(http.Dir("../web/app/dist/"))
+	fs := gzipped.FileServer(http.Dir("./web/app/dist/"))
 
 	router.
 		PathPrefix("/dist/").
