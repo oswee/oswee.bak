@@ -24,13 +24,14 @@ type Config struct {
 	LogTimeFormat string
 }
 
+// RunServer ...
 func RunServer() error {
 	// ctx := context.Background()
 
 	var cfg Config
-	flag.StringVar(&cfg.HTTPPort, "http-port", "", "HTTP port to bind")
+	flag.StringVar(&cfg.HTTPPort, "http-port", "8080", "HTTP port to bind")
 	flag.IntVar(&cfg.LogLevel, "log-level", 0, "Global log level")
-	flag.StringVar(&cfg.LogTimeFormat, "log-time-format", "",
+	flag.StringVar(&cfg.LogTimeFormat, "log-time-format", "2006-01-02T15:04:05Z07:00",
 		"Print time format for logger e.g. 2006-01-02T15:04:05Z07:00")
 	flag.Parse()
 
@@ -51,13 +52,13 @@ func RunServer() error {
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  120 * time.Second,
 		//TLSConfig: tlsConfig,
-		Handler: middleware.AddRequestID(middleware.AddLogger(logger.Log, router)),
+		Handler:        middleware.AddRequestID(middleware.AddLogger(logger.Log, router)),
+		MaxHeaderBytes: 1 << 20,
 	}
-	log.Fatal(srv.ListenAndServe())
-	// err := srv.ListenAndServe()
-	// if err != nil {
-	// 	log.Fatalf("Client failed to start: %v", err)
-	// }
-	fmt.Println("Client listening on port: ", cfg.HTTPPort)
+	// log.Fatal(srv.ListenAndServe())
+	err := srv.ListenAndServe()
+	if err != nil {
+		log.Fatalf("Client failed to start: %v", err)
+	}
 	return nil
 }
