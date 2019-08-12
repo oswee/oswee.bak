@@ -1,5 +1,4 @@
 import { storiesOf, html, withKnobs, withClassPropertiesKnobs } from '@open-wc/demoing-storybook';
-import { UiPill } from '../components/ui-pill';
 import '../components/ui-pill';
 
 storiesOf('Elements', module)
