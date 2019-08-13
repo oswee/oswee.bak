@@ -1,7 +1,7 @@
 import { storiesOf, html, withKnobs, withClassPropertiesKnobs } from '@open-wc/demoing-storybook';
 import '../components/ui-pill';
 
-storiesOf('Elements', module)
+storiesOf('Elements|Elements', module)
   .addDecorator(withKnobs)
  
   .add(
