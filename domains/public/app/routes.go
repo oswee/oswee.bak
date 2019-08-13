@@ -24,7 +24,7 @@ func newRouter() *mux.Router {
 	router.HandleFunc("/signin", indexGetHandler)
 	router.HandleFunc("/signup", indexGetHandler)
 	router.HandleFunc("/restore-password", indexGetHandler)
-	router.HandleFunc("/favicon.ico", faviconGetHandler).Methods(http.MethodGet)
+	// router.HandleFunc("/favicon.ico", faviconGetHandler).Methods(http.MethodGet)
 
 	fs := gzipped.FileServer(http.Dir("./web/app/dist/"))
 
