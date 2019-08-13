@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common');
 // const WorkboxPlugin = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -18,6 +19,7 @@ module.exports = merge(common, {
 			// template: path.resolve(__dirname, 'src', 'template.html'),
 			filename: './index.html',
 		}),
+		new FaviconsWebpackPlugin('./src/assets/favicon-dev-512x512.png'),
 		// new WorkboxPlugin.GenerateSW({
 		// 	// Exclude images from the precache
 		// 	exclude: [/\.(?:png|jpg|jpeg|svg)$/],

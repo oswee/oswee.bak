@@ -12,6 +12,6 @@ func indexGetHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // faviconGetHandler serves the Favicon file
-func faviconGetHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./web/app/dist/favicon.ico")
-}
+// func faviconGetHandler(w http.ResponseWriter, r *http.Request) {
+// 	http.ServeFile(w, r, "./web/app/dist/favicon.ico")
+// }
