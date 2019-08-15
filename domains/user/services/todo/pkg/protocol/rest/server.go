@@ -11,8 +11,8 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
-	v1 "github.com/oswee/domains/user/services/todo/pkg/api/v1"
 	"github.com/oswee/logger"
+	v1 "github.com/oswee/oswee/domains/user/services/todo/pkg/api/v1"
 	"github.com/oswee/oswee/domains/user/services/todo/pkg/protocol/rest/middleware"
 )
 
