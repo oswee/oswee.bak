@@ -4,7 +4,7 @@
     "title": "ToDo service",
     "version": "1.0",
     "contact": {
-      "name": "go-grpc-http-rest-microservice-tutorial project",
+      "name": "ToDo test service",
       "url": "https://github.com/oswee/domains/user/services/todo",
       "email": "dzintars.klavins@gmail.com"
     }
@@ -25,7 +25,7 @@
         "operationId": "Create",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1CreateResponse"
             }
@@ -58,7 +58,7 @@
         "operationId": "ReadAll",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1ReadAllResponse"
             }
@@ -90,7 +90,7 @@
         "operationId": "Read",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1ReadResponse"
             }
@@ -128,7 +128,7 @@
         "operationId": "Delete",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1DeleteResponse"
             }
@@ -168,7 +168,7 @@
         "operationId": "Update",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1UpdateResponse"
             }
@@ -207,7 +207,7 @@
         "operationId": "Update2",
         "responses": {
           "200": {
-            "description": "",
+            "description": "A successful response.",
             "schema": {
               "$ref": "#/definitions/v1UpdateResponse"
             }

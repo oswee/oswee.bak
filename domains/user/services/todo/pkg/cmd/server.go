@@ -9,10 +9,10 @@ import (
 	// mysql driver
 	_ "github.com/go-sql-driver/mysql"
 
-	v1 "github.com/oswee/domains/user/services/todo/pkg/service/v1"
 	"github.com/oswee/logger"
 	"github.com/oswee/oswee/domains/user/services/todo/pkg/protocol/grpc"
 	"github.com/oswee/oswee/domains/user/services/todo/pkg/protocol/rest"
+	v1 "github.com/oswee/oswee/domains/user/services/todo/pkg/service/v1"
 )
 
 // Config is configuration for Server
