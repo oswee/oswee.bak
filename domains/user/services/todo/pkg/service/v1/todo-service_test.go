@@ -9,7 +9,7 @@ import (
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
-	v1 "github.com/oswee/domains/user/services/todo/pkg/api/v1"
+	v1 "github.com/oswee/oswee/domains/user/services/todo/pkg/api/v1"
 	"gopkg.in/DATA-DOG/go-sqlmock.v1"
 )
 
