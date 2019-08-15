@@ -1,0 +1,87 @@
+syntax = "proto3";
+package v1;
+
+// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+        title: "User Commands service";
+        description: "User Commands API service";
+		version: "0.0.1";
+		contact: {
+			name: "Oswee";
+			url: "https://github.com/oswee/oswee";
+			email: "dzintars.klavins@gmail.com";
+        };
+    };
+    host: "api.oswee.com";
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+// AuthCommandService is a command service to handle new user signups
+service UserService {
+    // SignUp ...
+    rpc SignUp(SignUpRequest) returns (SignUpResponse){
+        option (google.api.http) = {
+            post: "/v1/signup"
+            body: "*"
+        };
+    }
+
+    // SignIn...
+    rpc SignIn(SignInRequest) returns (google.protobuf.Empty){
+        option (google.api.http) = {
+            post: "/v1/signin"
+            body: "*"
+        };
+    }
+}
+
+message SignUpPayload {
+    string display_name = 1;
+    string email = 2;
+    string password = 3;
+}
+
+// SignupRequest ...
+message SignUpRequest{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+    SignUpPayload payload = 2;
+}
+
+// SignupResponse returns response of received command
+message SignUpResponse{
+    // API versioning: it is my best practice to specify version explicitly
+    string api = 1;
+
+    // UUID of created signup request
+    bytes uuid = 2;
+}
+
+message Credentials {
+    string email = 1;
+    string password = 2;
+}
+
+// SignInRequest ...
+message SignInRequest{
+    string api = 1;
+    Credentials credentials = 2;
+}
