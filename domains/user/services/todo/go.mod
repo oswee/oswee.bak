@@ -1,4 +1,4 @@
-module github.com/oswee/domains/user/services/todo
+module github.com/oswee/oswee/domains/user/services/todo
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
