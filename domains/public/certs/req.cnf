@@ -1,0 +1,25 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints    =   CA:FALSE
+
+[req]
+distinguished_name  =   req_distinguished_name
+x509_extensions     =   v3_req
+prompt              =   no
+
+[req_distinguished_name]
+C   =   LV
+ST  =   Riga
+L   =   Riga
+O   =   Oswee
+OU  =   IT
+CN  =   localhost
+
+[v3_req]
+keyUsage = critical, digitalSignature, keyAgreement, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1   =   localhost
+DNS.2   =   workstation.oswee.com
+DNS.3   =   192.168.67.2

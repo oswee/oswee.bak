@@ -2,9 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
-// const WorkboxPlugin = require('workbox-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
+// const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -19,7 +18,34 @@ module.exports = merge(common, {
 			// template: path.resolve(__dirname, 'src', 'template.html'),
 			filename: './index.html',
 		}),
-		new FaviconsWebpackPlugin('./src/assets/favicon-dev-512x512.png'),
+		new HtmlWebpackPlugin({
+			title: 'Progressive Oswee Web Application'
+		}),
+		new WorkboxPlugin.GenerateSW({
+			// these options encourage the ServiceWorkers to get in there fast
+			// and not allow any straggling "old" SWs to hang around
+			clientsClaim: true,
+			skipWaiting: true
+		}),
+		// new WebpackPwaManifest({
+		// 	short_name: 'Oswee',
+		// 	name: 'Oswee PWA',
+		// 	description: 'My awesome Progressive Web App!',
+		// 	start_url: "/",
+		// 	// scope: '/',
+		// 	display: 'standalone',
+		// 	orientation: 'landscape',
+		// 	theme_color: '#76FF03',
+		// 	background_color: '#000A18',
+		// 	crossorigin: '', //can be null, use-credentials or anonymous
+		// 	icons: [
+		// 	  {
+		// 		src: path.resolve('dist/favicon-dev-512x512.png'),
+		// 		sizes: [36, 48, 72, 96, 120, 128, 144, 152, 180, 192, 256, 384, 512] // multiple sizes
+		// 	  }
+		// 	]
+		// }),
+
 		// new WorkboxPlugin.GenerateSW({
 		// 	// Exclude images from the precache
 		// 	exclude: [/\.(?:png|jpg|jpeg|svg)$/],
@@ -42,23 +68,7 @@ module.exports = merge(common, {
 		// 		},
 		// 	},
 		// 	}],
-		// }),
-		new WebpackPwaManifest({
-			name: 'My Progressive Web App',
-			short_name: 'MyPWA',
-			description: 'My awesome Progressive Web App!',
-			start_url: "/",
-			display: 'standalone',
-			theme_color: '#ff0000',
-			background_color: '#ffffff',
-			crossorigin: '', //can be null, use-credentials or anonymous
-			icons: [
-			  {
-				src: path.resolve('src/assets/img/app-icon.png'),
-				sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-			  }
-			]
-		})
+		// })
 	],
 	devtool: 'source-map',
 	devServer: {

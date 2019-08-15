@@ -13,9 +13,20 @@ import './routes/app-not-found';
 import './routes/app-apps';
 import './routes/app-route-planner';
 
-window.addEventListener('load', () => {
-    initRouter();
-})
+// window.addEventListener('load', () => {
+//     initRouter();
+// })
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/dist/sw.js').then(registration => {
+            console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+        });
+        initRouter();
+    });
+}
 
 function initRouter() {
     const router = new Router(document.querySelector('main'));

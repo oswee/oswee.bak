@@ -6,7 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common = require('./webpack.common');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 //
 module.exports = merge(common, {
 	mode: 'production',
@@ -14,7 +15,7 @@ module.exports = merge(common, {
 		filename: '[name].[contentHash].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		// publicPath: '/static/dist',
-		publicPath: '/dist',
+		publicPath: '/dist/',
 	},
 	optimization: {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
@@ -25,6 +26,7 @@ module.exports = merge(common, {
 		}),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
+			title: 'Progressive Oswee Web Application',
 			template: './src/template.html',
 			minify: {
 				removeAttributeQuotes: true,
@@ -32,7 +34,18 @@ module.exports = merge(common, {
 				removeComments: true,
 			},
 		}),
-		new FaviconsWebpackPlugin('./src/assets/favicon-prod-512x512.png'),
+		new WorkboxPlugin.GenerateSW({
+			swDest: 'sw.js',
+			// these options encourage the ServiceWorkers to get in there fast
+			// and not allow any straggling "old" SWs to hang around
+			clientsClaim: true,
+			skipWaiting: true,
+			runtimeCaching: [{
+				urlPattern: new RegExp('https://localhost:8443'),
+				handler: 'StaleWhileRevalidate'
+			}]
+		}),
+		// new FaviconsWebpackPlugin('./src/assets/favicon-prod-512x512.png'),
 	],
 	module: {
 		rules: [
