@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/ptypes"
-	v1 "github.com/oswee/domains/user/services/todo/pkg/api/v1"
+	v1 "github.com/oswee/oswee/domains/user/services/todo/pkg/api/v1"
 	"google.golang.org/grpc"
 )
 
