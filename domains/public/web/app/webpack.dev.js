@@ -54,7 +54,7 @@ module.exports = merge(common, {
 			crossorigin: '', //can be null, use-credentials or anonymous
 			icons: [
 			  {
-				src: path.resolve('src/assets/img/app-icon.png'),
+				src: path.resolve('src/assets/favicon-dev-512x512.png'),
 				sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
 			  }
 			]
