@@ -1,4 +1,4 @@
-module "github.com/oswee/oswee/domains/user\n"
+module github.com/oswee/oswee/domains/user
 
 go 1.12
 
