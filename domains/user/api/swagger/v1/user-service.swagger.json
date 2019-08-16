@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "User service",
+    "version": "1.0",
+    "contact": {
+      "name": "User service",
+      "url": "https://github.com/oswee/oswee/domains/user",
+      "email": "dzintars.klavins@gmail.com"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/signup": {
+      "post": {
+        "summary": "Create new signup request",
+        "operationId": "CreateSignup",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSignupResponse"
+            }
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateSignupRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserCommandService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "v1CreateSignupRequest": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "pasword": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CreateSignupResponse": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    }
+  }
+}
