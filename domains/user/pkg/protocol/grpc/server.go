@@ -14,7 +14,7 @@ import (
 )
 
 // RunServer runs gRPC service to publish User service
-func RunServer(ctx context.Context, v1API v1.UserServiceServer, port string) error {
+func RunServer(ctx context.Context, v1API v1.UserCommandServiceServer, port string) error {
 	listen, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		return err
@@ -28,7 +28,7 @@ func RunServer(ctx context.Context, v1API v1.UserServiceServer, port string) err
 
 	// register service
 	server := grpc.NewServer(opts...)
-	v1.RegisterUserServiceServer(server, v1API)
+	v1.RegisterUserCommandServiceServer(server, v1API)
 
 	// graceful shutdown
 	c := make(chan os.Signal, 1)

@@ -88,7 +88,7 @@ func RunServer() error {
 	}
 	defer db.Close()
 
-	v1API := v1.NewUserServiceServer(db)
+	v1API := v1.NewUserCommandServiceServer(db)
 
 	// run HTTP gateway
 	go func() {

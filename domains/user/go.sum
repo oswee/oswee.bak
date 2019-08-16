@@ -4,10 +4,14 @@ github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDk
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/gofrs/uuid v3.2.0+incompatible h1:y12jRkkFxsd7GpqdSZ+/KCs/fJbqpEXSGd4+jfEaewE=
+github.com/gofrs/uuid v3.2.0+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfbm0A=
 github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
+github.com/golang/protobuf v1.3.2 h1:6nsPYzhq5kReh6QImI3k5qWzO4PEbvbIW2cwSfR/6xs=
+github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0 h1:Iju5GlWwrvL6UBg4zJJt3btmonfrMlCDdsejg4CZE7c=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
@@ -20,6 +24,8 @@ github.com/oswee/logger v0.0.0-20190815133410-3d0b4b0cca0a h1:6THJ8aTY68yrtTWPOj
 github.com/oswee/logger v0.0.0-20190815133410-3d0b4b0cca0a/go.mod h1:H1BYg0btAMX37JJXoc/VqCQULvsO3V30+SV2PlPtm74=
 github.com/oswee/oswee v0.0.0-20190815121154-dccb2c13b83a h1:0Qv2G7ZWfuMePGX4mcbuhQ9lLMYpArX4xq9mES8mrms=
 github.com/oswee/oswee v0.0.0-20190815121154-dccb2c13b83a/go.mod h1:9W0ek0my4YeAa9LcNBmAyW1fAdzCXDfHzGMlkWjSYJs=
+github.com/oswee/oswee v0.0.0-20190816190911-cd20691dd4d9 h1:JH3rA2utgOC/q5AuySEsBRyZGulQBJu8nnSsV6GFNJM=
+github.com/oswee/oswee v0.0.0-20190816190911-cd20691dd4d9/go.mod h1:9W0ek0my4YeAa9LcNBmAyW1fAdzCXDfHzGMlkWjSYJs=
 github.com/oswee/oswee/pkg/logger v0.0.0-20190815121154-dccb2c13b83a h1:B+2SUyoDbbRr/frJAs3PeyjqW+WJtqJmRqyyaitEj4o=
 github.com/oswee/oswee/pkg/logger v0.0.0-20190815121154-dccb2c13b83a/go.mod h1:leqlLhG54UfgjXl5hfdpuAkP7ZHh363IJy32aUhXabI=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=
