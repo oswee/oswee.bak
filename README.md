@@ -4,6 +4,11 @@ This is a **personal** distributed microservices pet-project.
 
 ## Current state
 
+17-Aug-2019
+Made some small project reorganization and moved code from /domain to /internal. Introduced high level domains
+like /core, /shipping, /web.
+Somehow it feels right direction.
+
 12-Aug-2019
 Currently managed to Dockerize `./domains/public/` (multi-stage scratch build) which is public frontend.
 I think i will split front-end in two parts.
@@ -108,6 +113,7 @@ github.com/<username>/<monorepo>/build          // Dockerfiles, makefiles etc.
 github.com/<username>/<monorepo>/scripts        // Contains scripts to generate protobufs, etc.
 github.com/<username>/<monorepo>/***
 
+https://www.reddit.com/r/golang/comments/cro62b/help_wanted_how_to_organize_multiple_services_in/
 https://rentry.co/rr9s8
 rVN5ncLS
 
