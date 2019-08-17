@@ -19,6 +19,39 @@
     "application/json"
   ],
   "paths": {
+    "/v1/signin": {
+      "post": {
+        "summary": "SignIn ...",
+        "operationId": "SignIn",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SignInResponse"
+            }
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SignInRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserQueryService"
+        ]
+      }
+    },
     "/v1/signup": {
       "post": {
         "summary": "Create new signup request",
@@ -80,6 +113,36 @@
         "uuid": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "v1Credentials": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SignInRequest": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "credentials": {
+          "$ref": "#/definitions/v1Credentials"
+        }
+      }
+    },
+    "v1SignInResponse": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
         }
       }
     }

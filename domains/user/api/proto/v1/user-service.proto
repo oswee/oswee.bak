@@ -41,6 +41,17 @@ service UserCommandService {
 	}
 }
 
+service UserQueryService {
+	// SignIn ...
+	rpc SignIn(SignInRequest) returns (SignInResponse){
+		option (google.api.http) = {
+			post: "/v1/signin"
+			body: "*"
+		};
+	}
+}
+
+
 message CreateSignupRequest {
 	string api = 1;
 	string email = 2;
@@ -51,4 +62,25 @@ message CreateSignupRequest {
 message CreateSignupResponse {
 	string api = 1;
 	bytes uuid = 2;
+}
+
+message SignInRequest {
+	string api = 1;
+	Credentials credentials = 2;
+}
+
+message Credentials {
+	string email = 1;
+	string password = 2;
+}
+
+message SignInResponse {
+	string api = 1;
+	
+}
+
+message User {
+	string email = 1;
+	string display_name = 2;
+	string role = 3;
 }
