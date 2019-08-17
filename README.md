@@ -10,7 +10,7 @@ like /core, /shipping, /web.
 Somehow it feels right direction.
 
 12-Aug-2019
-Currently managed to Dockerize `./domains/public/` (multi-stage scratch build) which is public frontend.
+Currently managed to Dockerize `./domains/public/` (UPD: Renamed to `/internal/web/public`) (multi-stage scratch build) which is public frontend.
 I think i will split front-end in two parts.
 
 1) For public guest users and
