@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/oswee/oswee/domains/public/app/middleware"
+	"github.com/oswee/oswee/internal/web/public/app/middleware"
 	"github.com/oswee/oswee/pkg/logger"
 )
 

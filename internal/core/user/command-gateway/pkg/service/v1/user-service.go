@@ -6,7 +6,6 @@ import (
 	"fmt"
 
 	"github.com/gofrs/uuid"
-	// v1 "github.com/oswee/oswee/internal/core/user/command-gateway/pkg/api/v1"
 	v1 "github.com/oswee/oswee/api/core/user/stubs/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
