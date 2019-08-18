@@ -2,7 +2,14 @@
 
 This is a **personal** distributed microservices pet-project.
 
+## Motivation
+
+Main motivation is to develop highly scalable real-time collabotrative web application in enterprise resource planning domain.
+Under "scalable" I mean application itself and development workflow as well. You can't scale and move fast, if your organizational structure and workflow is wrong.
+
 ## Current state
+
+Most recent version could be found in Develop branch.
 
 Trying to capture progress log in [Wiki](https://github.com/oswee/oswee/wiki/Log)
 
@@ -26,6 +33,7 @@ Trying to capture progress log in [Wiki](https://github.com/oswee/oswee/wiki/Log
 - Lit-html
 - Redux
 - Redux Sagas
+- Reselect
 - SCSS/SMACSS
 - PWA
 - WebPack
