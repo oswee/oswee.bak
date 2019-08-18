@@ -25,3 +25,4 @@ CMD ["./main", "-http-port=8080", "-log-level=-1", "-log-time-format=2006-01-02T
 
 
 # docker build --rm -t oswee/public-frontend:latest . -f build/web/public/public-frontend.Dockerfile
+# docker run --rm -it -d -p 8080:8080/tcp --name public-frontend oswee/public-frontend:latest   // Remove "-d" to see logs
