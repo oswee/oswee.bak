@@ -1,0 +1,88 @@
+syntax = "proto3";
+package v1;
+
+// import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "User service";
+		version: "1.0";
+		description: "User Commands API service";
+		contact: {
+			name: "User service";
+			url: "https://github.com/oswee/oswee/internal/core/user/command-gateway";
+			email: "dzintars.klavins@gmail.com";
+        };
+	};
+	host: "api.oswee.com";
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+service UserCommandService {
+	// Create new signup request
+	rpc CreateSignup(CreateSignupRequest) returns (CreateSignupResponse){
+		option (google.api.http) = {
+			post: "/v1/signup"
+			body: "*"
+		};
+	}
+}
+
+service UserQueryService {
+	// SignIn ...
+	rpc SignIn(SignInRequest) returns (SignInResponse){
+		option (google.api.http) = {
+			post: "/v1/signin"
+			body: "*"
+		};
+	}
+}
+
+
+message CreateSignupRequest {
+	string api = 1;
+	string email = 2;
+	string pasword = 3;
+	string display_name = 4;
+}
+
+message CreateSignupResponse {
+	string api = 1;
+	bytes uuid = 2;
+}
+
+message SignInRequest {
+	string api = 1;
+	Credentials credentials = 2;
+}
+
+message Credentials {
+	string email = 1;
+	string password = 2;
+}
+
+message SignInResponse {
+	string api = 1;
+	
+}
+
+message User {
+	string email = 1;
+	string display_name = 2;
+	string role = 3;
+}

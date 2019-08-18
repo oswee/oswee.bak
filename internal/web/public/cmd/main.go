@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	app "github.com/oswee/oswee/domains/public/app"
+	app "github.com/oswee/oswee/internal/web/public/app"
 )
 
 func main() {

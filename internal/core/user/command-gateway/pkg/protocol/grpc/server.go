@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	v1 "github.com/oswee/oswee/internal/core/user/command-gateway/pkg/api/v1"
+	v1 "github.com/oswee/oswee/api/core/user/stubs/v1"
 	"github.com/oswee/oswee/internal/core/user/command-gateway/pkg/protocol/grpc/middleware"
 	"github.com/oswee/oswee/pkg/logger"
 )
