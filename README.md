@@ -4,30 +4,7 @@ This is a **personal** distributed microservices pet-project.
 
 ## Current state
 
-17-Aug-2019
-Made some small project reorganization and moved code from /domain to /internal. Introduced high level domains
-like /core, /shipping, /web.
-Somehow it feels right direction.
-
-12-Aug-2019
-Currently managed to Dockerize `./domains/public/` (UPD: Renamed to `/internal/web/public`) (multi-stage scratch build) which is public frontend.
-I think i will split front-end in two parts.
-
-1) For public guest users and
-2) For authenticated users.
-
-I am thinking on splitting front-end in self-contined components (Composite UI?)
-where each component could be deployed independently by its team, but ...
-it leads to some questions i should research. Like, how to manage composition of those components.
-How to handle Redux part in such case because every component would have its own independent redux store,
-but if every action exchange would happend via HTTP/2 / WebSockets and supporting backend services,
-this would lead to somehow slow UI.
-A lot to think/learn of.
-
-As well today i made Storybook implementation. It seems to work. Next steps would be to split that into separate
-Go webserver.
-
-Some of next tasks/milestones would be to implement User domain services to Sign Up, Sign In, Restore Password.
+Trying to capture progress log in [Wiki](https://github.com/oswee/oswee/wiki/Log)
 
 ## This project contains a stack of
 
