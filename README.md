@@ -48,3 +48,7 @@ To run Kafka cluster for development I am using Landoop container
 ```sh
 docker run --rm -p 2181:2181 -p 3030:3030 -p 8081-8083:8081-8083 -p 9581-9585:9581-9585 -p 9092:9092 -e ADV_HOST=192.168.67.2 landoop/fast-data-dev:latest
 ```
+
+## Sign In page
+
+![oswee.com Sign In page screenshot](https://raw.githubusercontent.com/oswee/oswee/develop/assets/sign-in-fullscreen.png)
