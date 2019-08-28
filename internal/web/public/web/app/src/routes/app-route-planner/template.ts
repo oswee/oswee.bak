@@ -5,7 +5,8 @@ export default function template(this: AppRoutePlanner) {
 	return html`
 		<div id="shortcuts"></div>
 		<div id="workspace">
-			<button>Crea...te</button>
+			<button class="dz-button">Create New</button>
+			<p>Test</p>
 		</div>
 	`;
 }

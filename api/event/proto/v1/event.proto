@@ -1,0 +1,11 @@
+syntax = "proto3";
+package v1;
+
+message Event {
+    string id = 1;
+    string type = 2;
+    string aggregate_id = 3;
+    string aggregate_type = 4;
+    string payload = 5;
+    string channel = 6;
+}

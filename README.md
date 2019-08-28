@@ -48,6 +48,12 @@ I already set up home-lab OpenShift 4 HA cluster and SLOWLY learning how to set 
 Back-End project structure is inspired by Golang's unofficial [Golang Standard Project Layout](https://github.com/golang-standards/project-layout).
 Front-End project structure is inspired by [CRUV](https://frontarm.com/james-k-nelson/react-cruv/) and [Redux Ducks](https://github.com/erikras/ducks-modular-redux) project layouts.
 
+## Development setup
+
+```sh
+$ go get -u github.com/micro/protobuf/{proto,protoc-gen-go}
+```
+
 ## Kafka
 
 To run Kafka cluster for development I am using Landoop container
