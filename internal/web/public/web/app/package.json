@@ -1,9 +1,16 @@
 {
-  "name": "lit-redux-advanced-boilerplate",
+  "name": "oswee",
   "version": "1.0.0",
   "description": "Advanced boilerplate and sample app with Lit Element, Redux, Redux-Saga, Reselect, SCSS.",
+  "author": "Dzintars Klavins",
+  "license": "ISC",
+  "homepage": "https://github.com/oswee/oswee#readme",
+  "keywords": [],
   "main": "index.js",
   "private": true,
+  "bugs": {
+    "url": "https://github.com/oswee/oswee/issues"
+  },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
@@ -27,15 +34,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oswee/lit-redux-advanced-boilerplate.git"
+    "url": "git+https://github.com/oswee/oswee.git"
   },
-  "keywords": [],
-  "author": "Dzintars Klavins",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oswee/lit-redux-advanced-boilerplate/issues"
-  },
-  "homepage": "https://github.com/oswee/lit-redux-advanced-boilerplate#readme",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "lit-element": "^2.1.0",

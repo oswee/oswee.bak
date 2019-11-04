@@ -33,16 +33,16 @@ type Writer interface {
 	Write()
 }
 
-type ReadWriter interface {
-	Reader
-	Writer
-}
+// type ReadWriter interface {
+// 	Reader
+// 	Writer
+// }
 
-func rd(e ReadWriter) {
+func rd(e Reader) {
 	e.Read()
 }
 
-func wr(e ReadWriter) {
+func wr(e Writer) {
 	e.Write()
 }
 

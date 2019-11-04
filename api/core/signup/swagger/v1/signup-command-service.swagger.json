@@ -1,0 +1,103 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Signup Command Service",
+    "description": "Signup Command API service",
+    "version": "1.0",
+    "contact": {
+      "name": "Oswee",
+      "url": "https://github.com/oswee/oswee/internal/core/signup/command-gateway",
+      "email": "dzintars.klavins@gmail.com"
+    }
+  },
+  "host": "api.oswee.com",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/signup": {
+      "post": {
+        "operationId": "Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SignupCommandService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "v1CreateRequest": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "signup": {
+          "$ref": "#/definitions/v1Signup",
+          "title": "oswee.signup.domain.v1.Signup signup = 2;"
+        },
+        "create_time": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "description": "Define new SignUp request",
+      "title": "SignupRequest",
+      "required": [
+        "api",
+        "signup",
+        "create_time"
+      ]
+    },
+    "v1Signup": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        }
+      },
+      "description": "Define new SignUp request payload",
+      "title": "Signup",
+      "required": [
+        "email",
+        "password",
+        "display_name"
+      ]
+    }
+  }
+}

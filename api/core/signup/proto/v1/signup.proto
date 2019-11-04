@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package oswee.signup.domain.v1;
+
+// option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
+
+// Incomming Signup request body
+message Signup {
+	// https://stackoverflow.com/a/52654286/6651080
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+        json_schema: {
+            email: "demo@example.com"
+            password: "password123"
+            display_name: "Demo User"
+        }
+	};
+	
+	string email = 1;
+	string password = 2;
+	string display_name = 3;
+}

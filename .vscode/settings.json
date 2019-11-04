@@ -1,3 +1,9 @@
 {
-    "go.formatTool": "goimports"
+    "go.formatTool": "goimports",
+    "protoc": {
+        "path": "/usr/local/bin/protoc",
+        "options": [
+            "--proto_path=vendor"
+        ]
+    }
 }

@@ -1,0 +1,78 @@
+syntax = "proto3";
+package oswee.signup.service.command.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+// import "signup.proto";
+
+// option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Signup Command Service";
+		version: "1.0";
+		description: "Signup Command API service";
+		contact: {
+			name: "Oswee";
+			url: "https://github.com/oswee/oswee/internal/core/signup/command-gateway";
+			email: "dzintars.klavins@gmail.com";
+        };
+	};
+	host: "api.oswee.com";
+    schemes: HTTP;
+    consumes: "application/json";
+    produces: "application/json";
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
+
+service SignupCommandService {
+    rpc Create(CreateRequest) returns (google.protobuf.Empty){
+		option (google.api.http) = {
+			post: "/v1/signup"
+			body: "*"
+		};
+	}
+}
+
+message CreateRequest {
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+        json_schema: {
+            title: "SignupRequest"
+            description: "Define new SignUp request"
+            required: ["api", "signup", "create_time"]
+        }
+	};
+
+	string api = 1;
+    // oswee.signup.domain.v1.Signup signup = 2;
+    Signup signup = 2;
+    google.protobuf.Timestamp create_time = 3;
+}
+
+message Signup {
+	// https://stackoverflow.com/a/52654286/6651080
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+        json_schema: {
+            title: "Signup"
+            description: "Define new SignUp request payload"
+            required: ["email", "password", "display_name"]
+        }
+	};
+	
+	string email = 1;
+	string password = 2;
+	string display_name = 3;
+}

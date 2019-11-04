@@ -1,0 +1,163 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Oswee Signup Command Service API",
+    "description": "The greatest API ever!",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Oswee",
+      "url": "https://github.com/oswee",
+      "email": "dzintars.klavins@gmail.com"
+    },
+    "license": {
+      "name": "BSD 3-Clause License",
+      "url": "https://github.com/oswee/api/blob/master/LICENSE.txt"
+    }
+  },
+  "host": "api.oswee.com",
+  "schemes": [
+    "https",
+    "wss"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/signup": {
+      "get": {
+        "operationId": "List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListResponse"
+            }
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          },
+          "418": {
+            "description": "I'm a teapot.",
+            "schema": {
+              "$ref": ".grpc.gateway.examples.examplepb.NumericEnum"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "api",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SignupQueryService"
+        ]
+      }
+    },
+    "/v1/signup/{id}": {
+      "get": {
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource does not exist.",
+            "schema": {
+              "format": "string"
+            }
+          },
+          "418": {
+            "description": "I'm a teapot.",
+            "schema": {
+              "$ref": ".grpc.gateway.examples.examplepb.NumericEnum"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SignupQueryService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "v1ListResponse": {
+      "type": "object",
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "signups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Signup"
+          }
+        }
+      },
+      "description": "Returns all Signups",
+      "title": "List Response",
+      "required": [
+        "api",
+        "signups"
+      ]
+    },
+    "v1Signup": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        }
+      },
+      "description": "Define a SignUp structure",
+      "title": "Signup",
+      "required": [
+        "email",
+        "password",
+        "display_name"
+      ]
+    }
+  },
+  "externalDocs": {
+    "description": "More about Oswee",
+    "url": "https://github.com/oswee/api"
+  }
+}
