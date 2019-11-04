@@ -8,6 +8,7 @@ require (
 	github.com/golang/protobuf v1.3.2
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/grpc-ecosystem/grpc-gateway v1.9.6
+	github.com/jstemmer/gotags v1.4.1 // indirect
 	github.com/oswee/logger v0.0.0-20190815133410-3d0b4b0cca0a
 	github.com/oswee/oswee v0.0.0-20190818133621-52413624803d
 	github.com/oswee/oswee/pkg/logger v0.0.0-20190815121154-dccb2c13b83a

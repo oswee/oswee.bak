@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  public-frontend:
+    build:
+      context: .
+      dockerfile: ../build/web/public/public-frontend.Dockerfile
+      args:
+        buildno: 1

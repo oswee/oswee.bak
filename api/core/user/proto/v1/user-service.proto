@@ -1,7 +1,8 @@
 syntax = "proto3";
 package v1;
 
-// import "google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
@@ -43,6 +44,11 @@ service UserCommandService {
 	}
 }
 
+service UserCommandHandlerService {
+	// Register Signup request in event store
+	rpc RegisterSignup(RegisterSignupRequest) returns (google.protobuf.Empty);
+}
+
 service UserQueryService {
 	// SignIn ...
 	rpc SignIn(SignInRequest) returns (SignInResponse){
@@ -56,9 +62,7 @@ service UserQueryService {
 
 message CreateSignupRequest {
 	string api = 1;
-	string email = 2;
-	string pasword = 3;
-	string display_name = 4;
+	Signup signup = 2;
 }
 
 message CreateSignupResponse {
@@ -85,4 +89,18 @@ message User {
 	string email = 1;
 	string display_name = 2;
 	string role = 3;
+}
+
+message RegisterSignupRequest {
+	string api = 1;
+	bytes uuid = 2;
+	Signup signup = 3;
+	google.protobuf.Timestamp create_time = 4;
+}
+
+// Incomming Signup request body
+message Signup {
+	string email = 1;
+	string password = 2;
+	string display_name = 3;
 }
